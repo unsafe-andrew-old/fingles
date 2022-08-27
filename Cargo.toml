@@ -10,4 +10,4 @@ categories = ["algorithms", "text-processing"]
 keywords = ["shingles", "ngrams", "fuzzy", "hashing"]
 
 [dependencies]
-murmurhash3 = "*"
+murmurhash3 = "0.0.5"
