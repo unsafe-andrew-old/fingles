@@ -52,14 +52,17 @@ pub fn hash_from_string<const N: usize, const L: usize>(mut input: Chars) -> Shi
 /// let bye_word_hash = hash_from_string::<100, 5>("Bye world!".to_string().chars());
 /// println!("{}", compare_hashes::<100, 5>(&hello_world_hash, &bye_word_hash));
 /// ```
-pub fn compare_hashes<const N: usize, const L: usize>(first: &ShinglesHash<N, L>, second: &ShinglesHash<N, L>) -> f64 {
-    first.iter()
-         .zip(second.iter())
-         .filter(|pair| pair.0 == pair.1)
-         .count() as f64 / N as f64
+pub fn compare_hashes<const N: usize, const L: usize>(
+    first: &ShinglesHash<N, L>,
+    second: &ShinglesHash<N, L>,
+) -> f64 {
+    first
+        .iter()
+        .zip(second.iter())
+        .filter(|pair| pair.0 == pair.1)
+        .count() as f64
+        / N as f64
 }
-
-
 
 #[cfg(test)]
 mod tests {
@@ -96,8 +99,8 @@ mod tests {
         let other_hash = hash_from_string::<HASH_LEN, NGRAM_LEN>(other.chars());
 
         assert!(
-            compare_hashes::<_, NGRAM_LEN>(&original_hash, &plagiarism_hash) >
-            compare_hashes::<_, NGRAM_LEN>(&original_hash, &other_hash)
+            compare_hashes::<_, NGRAM_LEN>(&original_hash, &plagiarism_hash)
+                > compare_hashes::<_, NGRAM_LEN>(&original_hash, &other_hash)
         );
     }
 }

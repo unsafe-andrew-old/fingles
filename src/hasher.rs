@@ -1,5 +1,5 @@
-use std::hash::Hasher;
 use murmurhash3::murmurhash3_x86_32;
+use std::hash::Hasher;
 
 /// A trait for hasher builder with custom seed value.
 pub trait SeedHasher {
@@ -15,7 +15,7 @@ pub struct Murmur3Hasher {
 
 impl Hasher for Murmur3Hasher {
     fn finish(&self) -> u64 {
-        return murmurhash3_x86_32(&self.bytes, self.seed) as u64;
+        murmurhash3_x86_32(&self.bytes, self.seed) as u64
     }
     fn write(&mut self, bytes: &[u8]) {
         self.bytes.extend(bytes);
@@ -25,6 +25,9 @@ impl Hasher for Murmur3Hasher {
 impl SeedHasher for Murmur3Hasher {
     type HasherType = Murmur3Hasher;
     fn with_seed(seed: u32) -> Self::HasherType {
-        return Murmur3Hasher { seed, bytes: vec![] };
+        Murmur3Hasher {
+            seed,
+            bytes: vec![],
+        }
     }
 }
