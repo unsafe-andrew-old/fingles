@@ -2,8 +2,12 @@
 name = "fingles"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+license = "GPL-3.0-or-later"
+description = "A library for hash-based text similarity analysis"
+repository = "https://github.com/andrei-lus/fingles"
+readme = "README.md"
+categories = ["algorithms", "text-processing"]
+keywords = ["shingles", "ngrams", "fuzzy", "hashing"]
 
 [dependencies]
 murmurhash3 = "*"
