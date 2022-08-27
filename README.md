@@ -1,5 +1,5 @@
 # fingles
-A functional rewrite of the [schindel](https://github.com/dapper91/schindel/) library, the goal is to make the library more extensible and open
+A functional rewrite of the [schindel](https://github.com/dapper91/schindel/) library, the goal is to make the library more extensible and open. The perfomance is at the first place, i just don't think that such a simple library should have a lot of boilerplate
 
 For the algorithm description refer to the [original repository README](https://github.com/dapper91/schindel/blob/master/README.md)
 
