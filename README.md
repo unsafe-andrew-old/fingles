@@ -3,6 +3,8 @@ A functional rewrite of the [schindel](https://github.com/dapper91/schindel/) li
 
 For the algorithm description refer to the [original repository README](https://github.com/dapper91/schindel/blob/master/README.md)
 
+NOTE: The crate can only be built with Nightly Rust because it's using const generics inference, which is currently only available in the Nightly Rust
+
 TODO:
 - Saner hashing(functions-based), multiple hashing algorithm support
 
